@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .platform-content {
+            width: 80%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .chatbot-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .chatbot-frame {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 400px;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="platform-content">
+        <h1>Welcome to Our Professional Platform</h1>
+        <p>This is a demo platform where you can interact with our chatbot.</p>
+    </div>
+    <div class="chatbot-icon" id="chatbotIcon">
+        💬
+    </div>
+    <iframe src="http://localhost:8501" class="chatbot-frame" id="chatbotFrame"></iframe>
+
+    <script>
+        const chatbotIcon = document.getElementById('chatbotIcon');
+        const chatbotFrame = document.getElementById('chatbotFrame');
+
+        chatbotIcon.addEventListener('click', () => {
+            if (chatbotFrame.style.display === 'none' || chatbotFrame.style.display === '') {
+                chatbotFrame.style.display = 'block';
+            } else {
+                chatbotFrame.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
